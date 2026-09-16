@@ -24,4 +24,25 @@ pageextension 50101 "Customer Card Ext" extends "Customer Card"
         // addfirst(...)
         // addlast(...)
     }
+
+    actions
+    {
+        addlast("Navigation")
+        {
+            action("Customer Feedback")
+            {
+                Caption = 'Feedback';
+                ApplicationArea = All;
+
+                // Icon
+                Image = Comments;
+
+                RunObject = Page "Customer Feedback List";
+                RunPageLink = "Customer No." = FIELD("No.");
+
+                // Optimize per customer and feedback date.
+                RunPageView = SORTING("Customer No.", "Feedback Date");
+            }
+        }
+    }
 }

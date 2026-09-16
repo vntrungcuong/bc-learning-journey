@@ -2,10 +2,13 @@ namespace CuongMai.Fundamentals.Sales.Customer;
 
 using Microsoft.Sales.Customer;
 
+// 5011 - Customer Category field ID prefix for this table extension.
+// Range from 50000..99999
 tableextension 50100 "Customer Ext" extends Customer
 {
     fields
     {
+        // 50100 - Customer Category field ID for this table extension.
         field(50100; "Customer Category"; Enum "CustomerCategory.Enum")
         {
             Caption = 'Customer Category';
