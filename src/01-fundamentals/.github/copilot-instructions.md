@@ -1,74 +1,73 @@
 # Business Central Project Instructions
 
-## Project Context
-
+## Project Configuration
 - Platform: Microsoft Dynamics 365 Business Central
 - Language: AL
-- Read the current runtime, application version, target, publisher, dependencies, and object ID ranges from `app.json`.
+- Project Prefix: CMI
+- Prefix Position: Start
+- Namespace Root: CuongMai.Fundamentals
+- Namespace Pattern: `<NamespaceRoot>[.<Module>][.<Feature>]`
+- Default DataClassification: CustomerContent
+
+> Configure `Project Prefix`, `Namespace Root`, and `Default DataClassification` for each project. Do not infer them from the publisher.
 
 ## Source of Truth
+- Read `app.json` before generating or reviewing AL code.
+- Treat `app.json` as the source of truth for application/platform versions, runtime, target, publisher, extension version, dependencies, and `idRanges`.
+- Treat the Project Configuration above as the source of truth for project naming conventions.
+- Do not derive or invent the Project Prefix or Namespace Root from `app.json.publisher`.
+- If required configuration is missing or conflicts with the workspace, report the conflict before creating or renaming objects.
 
-- Treat `app.json` as the source of truth for runtime, application version, publisher, extension version, dependencies, target, and object ID ranges.
-- Do not infer project metadata from this file when it conflicts with `app.json`.
-- Read and respect the current `app.json` before generating or reviewing AL code.
-- Do not invent a publisher prefix. If the prefix is not defined in `app.json` or confirmed by the user, ask before creating names.
+## Core AL Rules
+- Stay compatible with the versions, dependencies, target, and `idRanges` in `app.json`.
+- Apply the configured Project Prefix to new custom objects and extension elements where required by the project and Microsoft AL naming/affix rules.
+- Use namespaces following the configured Namespace Pattern. Example: `CuongMai.Fundamentals.Sales.Customer`.
+- Prefer extension objects and event subscribers over copying or modifying Microsoft standard objects.
+- Reference AL objects by name rather than object ID where supported.
+- Keep changes minimal and scoped to the requested feature; preserve unrelated user changes.
+- Use English for technical names, code comments, and documentation comments.
+- Apply SOLID, KISS, and DRY pragmatically; prefer simple AL-native patterns over unnecessary abstractions.
+- Preserve existing `DataClassification`. For new elements requiring it, use the configured default unless business or compliance semantics require another classification.
+- Consider permissions, security, upgrade impact, data exposure, and performance when relevant to the change.
+- Never assert a performance improvement without measurements.
 
-## Project Rules
-
-- Use the project's publisher prefix for custom objects and fields.
-- Do not use object IDs outside the configured `idRanges`.
-- Preserve compatibility with the application and runtime versions in `app.json`.
-- Keep one feature's objects grouped together.
-- Prefer event subscribers when extending standard behavior.
-- Do not modify Microsoft standard objects directly.
-- Run AL compilation and focused validation after code changes.
-- Consider permissions, data classification, upgrade impact, and performance for every feature.
-- Keep changes focused on the requested feature and do not modify unrelated files.
-- Do not change the app identity, publisher, object ID ranges, runtime, or dependencies without explaining the impact.
-- Preserve user changes already present in the worktree.
-- Keep repository instructions concise; load detailed guidance from the relevant prompt or document only when the task needs it.
-- Prefer concise, goal-focused answers: summary, recommendation, changed files, validation, and remaining risks.
-- Verify Microsoft APIs, AL properties, events, object names, and signatures against official Microsoft Learn documentation and/or current AL symbols before presenting them as facts.
-- If official verification or compilation is unavailable, state that limitation explicitly and mark assumptions.
-- Do not claim performance improvements without workload, baseline, measurement method, and before/after evidence.
-- Treat performance as workload-dependent; do not impose a universal latency target on every page, report, integration, job queue, or upgrade operation.
-- Use English for code comments and documentation comments. Add concise XML documentation for public or non-obvious procedures when supported by the target AL version; explain why, not obvious syntax.
-- Apply SOLID, KISS, and DRY pragmatically in AL. Prefer AL-native patterns and avoid abstractions that add complexity without a concrete benefit.
-- Treat AI/Copilot features as optional capabilities: define user value, data access, privacy, permissions, fallback behavior, and human control before implementation.
+## Verification and Change Control
+- Prefer current workspace symbols and Microsoft AL tools for AL-specific verification; use official Microsoft documentation when additional verification is required.
+- Do not invent APIs, events, properties, dependencies, or AL syntax. State unverified assumptions explicitly.
+- For analysis, design, or review requests, do not modify files unless implementation is explicitly requested.
+- For implementation requests, modify only files required by the requested scope.
+- Explain impact before broad refactoring, schema/dependency changes, or destructive operations.
+- Do not change app identity, publisher, runtime, dependencies, or `idRanges` unless explicitly required.
 
 ## Validation
-
-Before considering a change complete:
-
-- Check compiler errors and warnings.
-- Check object IDs and naming.
-- Check table relations, keys, and permissions.
-- Check integration error handling and retry behavior where relevant.
+Before considering a code change complete:
+- Build or compile the AL project and review relevant diagnostics when supported tools are available.
+- Check object IDs, Project Prefix/affix usage, namespace, naming, and file naming.
+- Respect repository-configured analyzers; do not add suppressions without explicit justification.
+- Check permissions, table relations/keys, DataClassification, upgrade impact, and integration error handling where relevant.
 - Suggest focused tests for changed behavior.
-- Report remaining risks or unvalidated assumptions.
+- Report validation not performed, assumptions, test gaps, and residual risks.
 
-## Copilot Routing
+## Routing
+- Keep this repository-level file concise and always-on.
+- Use relevant path-specific `.instructions.md` files only when their scope matches the current task or files.
+- Use relevant Agent Skills for reusable multi-step workflows; do not duplicate skill workflows in this file.
+- Use project documentation, current symbols, and Microsoft AL tools only when needed to understand or validate the task.
+- For general, exploratory, small, or mixed-scope work, use the built-in Agent.
+- For a clear specialist role, use the matching project Custom Agent:
+  - Solution design or architecture → AL Architect (Custom)
+  - Implementation → AL Developer (Custom)
+  - Root-cause investigation → AL Debugger (Custom)
+  - Automated testing → AL Test Engineer (Custom)
+  - General code review → AL Reviewer (Custom)
+  - Security-focused review → AL Security Reviewer (Custom)
+  - Performance-focused review → AL Performance Reviewer (Custom)
+- Prefer the smallest relevant context, workflow, agent, and tool set needed to complete the task correctly.
 
-- Use `design-al-object.prompt.md` for one object or object extension.
-- Use `develop-al-feature.prompt.md` for a feature involving multiple objects.
-- Use `test-al-feature.prompt.md` for test design or test code.
-- Use `review-al-security-upgrade.prompt.md` for permissions, data exposure, or schema and upgrade review.
-- Use `review-al-quality-gates.prompt.md` for a concise cross-cutting quality review.
-- Use `bc-al-feature-development` for a multi-step implementation workflow.
-- Use `bc-issue-diagnosis` for hidden defects, runtime errors, data issues, permissions, integrations, Job Queue, upgrade, and performance regressions.
-- Use `bc-security-review` for roles, permissions, data exposure, API/OData, Profiles, and resource exposure.
-- Use `bc-integration-development` for external APIs, web services, authentication, retry, idempotency, and operational recovery.
-- Use `bc-test-development` for AL automated tests, TestPage, TestRequestPage, reports, APIs, XMLports, permissions, and upgrade tests.
-- Use the performance review prompt or skill only when the task includes a measurable performance concern.
-
-## Response and Validation Contract
-
-For code or design tasks, respond in this order:
-
-1. Goal and assumptions.
-2. Focused recommendation or implementation.
-3. Security, performance, upgrade, and maintainability considerations.
-4. Validation performed and validation not available.
-5. Test gaps and residual risks.
-
-Do not invent Microsoft APIs, AL syntax, object names, events, properties, or dependencies. Prefer a short answer with complete decision-critical information over a long generic explanation.
+## Response Contract
+For code/design tasks, prefer concise output in this order:
+1. Goal and necessary assumptions.
+2. Recommendation or implementation.
+3. Changed files, when applicable.
+4. Validation performed or unavailable.
+5. Remaining risks or test gaps.
