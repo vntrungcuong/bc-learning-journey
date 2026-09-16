@@ -1,1 +1,1 @@
-# bc-learning-journey
+# Tổng quan dự kiến, tiến độ và kỹ thuật đã chinh phục

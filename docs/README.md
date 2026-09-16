@@ -1,0 +1,1 @@
+# Tài liệu thiết kế sơ đồ kiến trúc, Case Studies (Markdown)
