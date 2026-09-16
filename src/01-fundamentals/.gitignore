@@ -1,0 +1,90 @@
+# =====================
+# Recommended .gitignore for Business Central AL projects
+# - Keep only source & metadata in repo
+# - Ignore compiled packages, downloaded symbols, IDE/user files, secrets, and large binaries
+# =====================
+
+################# OS #################
+# Windows/macOS temp files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+################# IDE / Editor #################
+# VS Code workspace/user settings (do NOT commit secrets or local paths)
+.vscode/*
+!.vscode/extensions.json
+.vscode/settings.json
+.vscode/launch.json
+
+# Visual Studio / Rider
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+################# AL / Business Central #################
+# Compiled app packages (do NOT commit build output)
+*.app
+*.appx
+*.appxbundle
+*.AppxUpload
+
+# Downloaded AL symbols & packages
+.alpackages/
+.alcache/
+
+# Build artifacts
+bin/
+obj/
+
+################# Packages & dependencies #################
+node_modules/
+packages/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+################# Secrets / Local config #################
+# Environment files and credentials
+.env
+.env.*
+secrets.json
+credentials.json
+local.settings.json
+*.pfx
+*.key
+*.pem
+*.crt
+
+################# Large / Generated / Misc #################
+# Archives, temporary files, caches
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.log
+logs/
+*.tmp
+*.temp
+
+# NuGet / packages
+*.nupkg
+*.snupkg
+
+# Git LFS pointer files (if you use LFS, don't ignore tracked types here)
+# Example: track large binaries via .gitattributes and `git lfs track "*.app"`
+
+################# DB / local data #################
+*.mdf
+*.ldf
+*.bak
+
+################# Misc developer helpers #################
+.idea/
+*.iml
+*.ipr
+
+# End of file

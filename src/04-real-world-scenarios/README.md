@@ -1,0 +1,1 @@
+# Các case study giả lập (Warehouse, Finance, v.v.)

@@ -1,0 +1,1 @@
+# (Tùy chọn) CI/CD pipeline kiểm tra AL Code Cop / Copilot actions
