@@ -1,9 +1,9 @@
 namespace CuongMai.Fundamentals.Sales.Customer;
 
-page 50101 "Customer Feedback Card"
+page 50101 "CMI Customer Feedback Card"
 {
     PageType = Card;
-    SourceTable = "Customer Feedback";
+    SourceTable = "CMI Customer Feedback";
 
     Caption = 'Customer Feedback Card';
     ApplicationArea = All;
