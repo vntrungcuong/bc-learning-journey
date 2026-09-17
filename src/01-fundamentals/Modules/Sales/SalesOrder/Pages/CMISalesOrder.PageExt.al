@@ -28,9 +28,9 @@ pageextension 50104 "CMI Sales Order Ext" extends "Sales Order"
 
                 trigger OnAction()
                 var
-                    SalesOrderValidation: Codeunit "CMI Sales Order Valid.";
+                    SalesOrderValidation: Codeunit "CMI Sales Order Validation.";
                 begin
-                    SalesOrderValidation.ValidateSalesOrder(Rec);
+                    SalesOrderValidation.ValidateSalesOrderV1(Rec);
 
                     Message(ValidationSuccessfulMsg);
                 end;
