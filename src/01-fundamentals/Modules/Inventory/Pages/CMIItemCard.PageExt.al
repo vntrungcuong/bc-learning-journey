@@ -1,7 +1,6 @@
 namespace CuongMai.Fundamentals.Inventory.Item;
 
 using Microsoft.Inventory.Item;
-using fundamentals.fundamentals;
 
 pageextension 50103 "CMI Item Card Ext" extends "Item Card"
 {
