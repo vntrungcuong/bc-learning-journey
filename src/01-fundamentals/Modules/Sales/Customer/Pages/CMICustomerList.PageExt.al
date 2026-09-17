@@ -2,7 +2,7 @@ namespace CuongMai.Fundamentals.Sales.Customer;
 
 using Microsoft.Sales.Customer;
 
-pageextension 50102 "Customer List Ext" extends "Customer List"
+pageextension 50102 "CMI Customer List Ext" extends "Customer List"
 {
     layout
     {

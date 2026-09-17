@@ -2,7 +2,7 @@ namespace CuongMai.Fundamentals.Sales.Customer;
 
 using Microsoft.Sales.Customer;
 
-table 50100 "Customer Feedback"
+table 50100 "CMI Customer Feedback"
 {
     Caption = 'Customer Feedback';
     DataClassification = CustomerContent;

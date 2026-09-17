@@ -2,7 +2,7 @@ namespace CuongMai.Fundamentals.Sales.Customer;
 
 using Microsoft.Sales.Customer;
 
-pageextension 50101 "Customer Card Ext" extends "Customer Card"
+pageextension 50101 "CMI Customer Card Ext" extends "Customer Card"
 {
     layout
     {
@@ -11,7 +11,7 @@ pageextension 50101 "Customer Card Ext" extends "Customer Card"
             // field(<Control Name>; <Source Expression>)
             // Rec."Customer Category": field was add in file CMICustomer.TableExt
             // Rec: is current record.
-            field("Customer Category"; Rec."Customer Category")
+            field("CMI Customer Category"; Rec."Customer Category")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the customer category.';
@@ -37,7 +37,7 @@ pageextension 50101 "Customer Card Ext" extends "Customer Card"
                 // Icon
                 Image = Comments;
 
-                RunObject = Page "Customer Feedback List";
+                RunObject = Page "CMI Customer Feedback List";
                 RunPageLink = "Customer No." = FIELD("No.");
 
                 // Optimize per customer and feedback date.
