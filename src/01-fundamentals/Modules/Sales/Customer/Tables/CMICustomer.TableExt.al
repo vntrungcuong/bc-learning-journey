@@ -9,7 +9,7 @@ tableextension 50100 "Customer Ext" extends Customer
     fields
     {
         // 50100 - Customer Category field ID for this table extension.
-        field(50100; "Customer Category"; Enum "CustomerCategory.Enum")
+        field(50100; "Customer Category"; Enum "CMI Customer Category")
         {
             Caption = 'Customer Category';
             DataClassification = CustomerContent;
