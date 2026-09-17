@@ -8,6 +8,12 @@ tableextension 50102 "CMI Sales Header Ext" extends "Sales Header"
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the customer purchase order reference for the sales document.';
         }
+
+        field(50103; "CMI Validate Type"; Enum "CMI SO Validation Type")
+        {
+            Caption = 'Validation Type';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
