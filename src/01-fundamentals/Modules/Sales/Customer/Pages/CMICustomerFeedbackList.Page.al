@@ -1,15 +1,15 @@
 namespace CuongMai.Fundamentals.Sales.Customer;
 
-page 50100 "Customer Feedback List"
+page 50100 "CMI Customer Feedback List"
 {
     PageType = List;
-    SourceTable = "Customer Feedback";
+    SourceTable = "CMI Customer Feedback";
 
     Caption = 'Customer Feedback';
     ApplicationArea = All;
     UsageCategory = Lists;
 
-    CardPageId = "Customer Feedback Card";
+    CardPageId = "CMI Customer Feedback Card";
 
     layout
     {
