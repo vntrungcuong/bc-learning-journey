@@ -1,4 +1,4 @@
-namespace fundamentals.fundamentals;
+namespace CuongMai.Fundamentals.Inventory.Item;
 
 using Microsoft.Inventory.Item;
 using CuongMai.Fundamentals.Inventory.Item;
