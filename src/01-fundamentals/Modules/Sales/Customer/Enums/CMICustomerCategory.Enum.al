@@ -1,12 +1,12 @@
 namespace CuongMai.Fundamentals.Sales.Customer;
 
-enum 50100 "CustomerCategory.Enum"
+enum 50100 "CMI Customer Category"
 {
     Extensible = true;
 
     value(0; Standard)
     {
-        Caption = 'Customer Category';
+        Caption = 'Standard';
     }
     value(1; Silver)
     {
