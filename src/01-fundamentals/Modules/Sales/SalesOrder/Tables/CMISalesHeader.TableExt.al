@@ -14,6 +14,12 @@ tableextension 50102 "CMI Sales Header Ext" extends "Sales Header"
             Caption = 'Validation Type';
             DataClassification = CustomerContent;
         }
+
+        field(50100; "CMI Approval Required"; Boolean)
+        {
+            Caption = 'Approval Required';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

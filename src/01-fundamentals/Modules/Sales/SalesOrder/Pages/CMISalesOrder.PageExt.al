@@ -21,6 +21,12 @@ pageextension 50104 "CMI Sales Order Ext" extends "Sales Order"
                 ApplicationArea = All;
                 ToolTip = 'Specifies the validation strategy used for this sales order.';
             }
+
+            field("CMI Approval Required"; Rec."CMI Approval Required")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies whether this Sales Order requires approval.';
+            }
         }
     }
 
