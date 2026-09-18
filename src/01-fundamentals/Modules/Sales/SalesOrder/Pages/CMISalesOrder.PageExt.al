@@ -27,6 +27,13 @@ pageextension 50104 "CMI Sales Order Ext" extends "Sales Order"
                 ApplicationArea = All;
                 ToolTip = 'Specifies whether this Sales Order requires approval.';
             }
+
+            field("CMI Last Approval Review At"; Rec."CMI Last Approval Review At")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the date and time when this sales order was last reviewed by the background approval review job.';
+                Editable = false;
+            }
         }
     }
 
