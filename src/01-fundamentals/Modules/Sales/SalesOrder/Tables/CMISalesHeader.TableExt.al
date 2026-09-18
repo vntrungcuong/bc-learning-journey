@@ -15,10 +15,18 @@ tableextension 50102 "CMI Sales Header Ext" extends "Sales Header"
             DataClassification = CustomerContent;
         }
 
-        field(50100; "CMI Approval Required"; Boolean)
+        field(50104; "CMI Approval Required"; Boolean)
         {
             Caption = 'Approval Required';
             DataClassification = CustomerContent;
+        }
+
+        field(50105; "CMI Last Approval Review At"; DateTime)
+        {
+            Caption = 'Last Approval Review At';
+            DataClassification = SystemMetadata;
+            ToolTip = 'Specifies the date and time when this sales order was last reviewed by the background approval review job.';
+            Editable = false;
         }
     }
 
