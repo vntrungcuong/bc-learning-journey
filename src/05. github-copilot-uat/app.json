@@ -1,0 +1,32 @@
+{
+  "id": "52b45f04-2f4c-42a6-810e-70ed5f57a729",
+  "name": "GHCBusinessCentralUAT",
+  "publisher": "GHCUAT",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "GHC Business Central UAT",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "28.0.0.0",
+  "idRanges": [
+    {
+      "from": 51500,
+      "to": 51549
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "17.1",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
