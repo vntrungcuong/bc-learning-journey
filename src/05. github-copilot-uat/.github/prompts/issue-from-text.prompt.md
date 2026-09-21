@@ -26,7 +26,7 @@ Establish the strongest evidence-based diagnosis possible without inventing envi
 ## Routing and output
 Return the normalized incident, evidence, classification, hypotheses, diagnostic results, root-cause status, and one of:
 - Functional/architecture handoff
-- Approved technical fix handoff to `Technical Consultant - AL Development (Custom)`
+- Approved technical correction handoff to `Technical Architect - Implementation Planning (Custom)`, which routes through human plan review before `Technical Consultant - AL Development (Custom)`
 - Blocked by missing evidence
 
 Do not perform broad refactoring or production changes.

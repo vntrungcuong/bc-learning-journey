@@ -27,8 +27,8 @@ Produce a Principal-level technical plan that a developer can implement without 
    - Data classification, least privilege, direct/indirect permissions, service identities, trust boundaries, secrets, and exposure.
 7. **Design validation**
    - Build/analyzer plan, unit and integration tests, permission tests, performance measurements, upgrade tests, and manual scenarios.
-8. **Create an implementation sequence**
-   - Small safe increments with dependencies, validation after each increment, rollback points, and human gates.
+8. **Create an implementation handoff sequence**
+   - Small safe increments with dependencies, validation after each increment, rollback points, and the handoff to `Technical Architect - Implementation Planning (Custom)` for the persistent execution plan.
 
 ## Required output
 - Technical objective and constraints
@@ -40,10 +40,10 @@ Produce a Principal-level technical plan that a developer can implement without 
 - Permission and security design
 - Performance, scale, database-growth, and retention analysis
 - Integration/background/telemetry design when relevant
-- Ordered implementation checklist
+- Ordered design-level implementation handoff
 - Test and measurement matrix
 - Risks, rollback, assumptions, open decisions, and gate decision
-- Handoff to `al-feature-development`, `al-object-development`, or `al-integration-development`
+- Handoff to `Technical Architect - Implementation Planning (Custom)`
 
 ## Common guardrails
 - Follow `.github/copilot-instructions.md`, applicable `.github/instructions/*.instructions.md`, the selected Custom Agent, `app.json`, and established repository conventions.

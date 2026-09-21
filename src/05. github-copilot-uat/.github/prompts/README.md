@@ -33,45 +33,57 @@ Agent returns evidence, handoff, or human gate
 ### Primary workflow prompts
 
 #### `/feature-from-document`
+
 Use when a functional specification, ticket document, workshop output, or requirement file is attached. Starts with `Functional Consultant - Solution Analysis (Custom)` and produces requirement analysis, FIT/GAP, acceptance criteria, readiness, and a Solution Architect handoff.
 
 #### `/feature-from-text`
+
 Use when the requirement is typed directly in chat. Normalizes incomplete text, performs requirement/FIT-GAP analysis, and produces the same governed handoff.
 
 #### `/issue-from-document`
+
 Use when an issue document, incident report, error evidence, or troubleshooting file is attached. Starts evidence-first diagnosis with `Technical Consultant - Issue Diagnosis (Custom)`.
 
 #### `/issue-from-text`
+
 Use when actual/expected behavior, error, environment, and reproduction information are entered as text.
 
 ### Focused design prompts
 
 #### `/analyze-requirement`
+
 Use for requirement and FIT/GAP analysis only. It does not start architecture or coding.
 
 #### `/design-solution`
+
 Use after functional readiness to define end-to-end Business Central solution boundaries, alternatives, data flow, security, integration, migration, operations, and architecture risks.
 
 #### `/design-technical-solution`
+
 Use after solution design to create an implementation-ready AL technical design with verified symbols, object/file plan, performance, security, database growth, upgrade, testing, and rollback analysis.
 
 ### Focused development prompts
 
 #### `/develop-al-object`
+
 Use for a focused object or tightly coupled object pair. The prompt supports tables, table extensions, pages, page extensions, codeunits, reports, queries, XMLports, enums, interfaces, APIs, permission sets, profiles, control add-ins, install/upgrade objects, and tests.
 
 #### `/develop-integration`
+
 Use for standard/custom APIs, HttpClient, files, Dataverse, Power Platform, Azure services, middleware, webhooks, and background integration workflows.
 
 ### Quality and delivery prompts
 
 #### `/review-al-code`
+
 Use for independent solution/code review. Reports evidence-based findings and returns `READY FOR HUMAN REVIEW`, `CHANGES REQUIRED`, or `BLOCKED BY MISSING EVIDENCE`.
 
 #### `/generate-al-tests`
+
 Use to generate a traceable test matrix, implement focused AL tests, and distinguish designed, compiled, executed, passed, failed, blocked, and manual scenarios.
 
 #### `/validate-release`
+
 Use for the final non-deployment readiness gate covering scope, artifact identity, build/analyzers, tests, permissions, security, performance, database growth, upgrade, deployment, monitoring, rollback, and support.
 
 ## Golden workflows
@@ -90,6 +102,10 @@ Solution Architect - Solution Design
 /design-technical-solution
         ↓
 Technical Architect - Technical Design
+        ↓
+Technical Architect - Implementation Planning
+        ↓
+HUMAN PLAN REVIEW
         ↓
 /develop-al-object or /develop-integration
         ↓
@@ -118,6 +134,10 @@ For a multi-object approved feature, the developer may use the selected developm
 Technical Consultant - Issue Diagnosis
         ↓
 Functional / Solution / Technical Architecture handoff when required
+        ↓
+Technical Architect - Implementation Planning
+        ↓
+HUMAN PLAN REVIEW
         ↓
 /develop-al-object or approved feature/integration development
         ↓

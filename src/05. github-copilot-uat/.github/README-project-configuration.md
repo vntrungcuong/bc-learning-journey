@@ -24,7 +24,7 @@ Example:
 ```yaml
 projectDisplayName: "Fundamentals"
 projectNamespaceSegment: "Fundamentals"
-publisherDisplayName: "Cuong Mai"
+publisherDisplayName: "GHCUAT"
 publisherNamespaceRoot: "CuongMai"
 objectAffix: "CMI"
 objectIdRanges:
@@ -39,7 +39,7 @@ objectIdRanges:
 Example:
 
 ```text
-Publisher display name : Cuong Mai
+Publisher display name : GHCUAT
 Namespace root         : CuongMai
 ```
 
@@ -90,7 +90,7 @@ Example after reading an actual `app.json`:
 
 ```json
 {
-  "publisher": "Cuong Mai",
+  "publisher": "GHCUAT",
   "application": "<actual value>",
   "platform": "<actual value>",
   "runtime": "<actual value>",
@@ -175,7 +175,7 @@ Template in `copilot-instructions.md`:
 requiredAnalyzers:
   - CodeCop
   - UICop
-  - <AppSourceCop or PerTenantExtensionCop when applicable>
+  - PerTenantExtensionCop
 treatWarningsAsErrors: <true|false>
 testAppSeparated: <true|false>
 minimumRequiredReviewers: <NUMBER>
@@ -254,7 +254,7 @@ Keep the three automation controls `false` for the baseline framework so product
 
 ---
 
-# 6. Complete copy/paste example
+## 6. Complete copy/paste example
 
 The following combines all examples into the same structure used by `## 1. Project Configuration` in `copilot-instructions.md`.
 
@@ -262,7 +262,7 @@ The following combines all examples into the same structure used by `## 1. Proje
 # Application identity
 projectDisplayName: "Fundamentals"
 projectNamespaceSegment: "Fundamentals"
-publisherDisplayName: "Cuong Mai"
+publisherDisplayName: "GHCUAT"
 publisherNamespaceRoot: "CuongMai"
 objectAffix: "CMI"
 objectIdRanges:
@@ -303,7 +303,7 @@ Before copying this example into `copilot-instructions.md`, replace the three Bu
 
 ---
 
-# 7. Quick mapping: where each value comes from
+## 7. Quick mapping: where each value comes from
 
 ```text
 projectDisplayName             -> Project/team convention, usually aligned with application/product name

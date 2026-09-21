@@ -23,10 +23,10 @@ Establish an evidence-backed root cause and the smallest safe correction without
    - Run the cheapest safe diagnostic to confirm or reject each hypothesis.
 5. **State the root cause**
    - Mark Verified Root Cause, Probable Cause, or Unresolved. Do not overstate confidence.
-6. **Design the correction**
-   - Root-cause fix, temporary mitigation, affected files/data, side effects, regression risk, rollback, and required approvals.
-7. **Validate**
-   - Reproduce before, apply the approved fix, compile/build, rerun the failing case, and run relevant regression/permission/performance tests.
+6. **Recommend the correction direction**
+   - Root-cause fix direction, temporary mitigation, impacted areas, side effects, regression risk, rollback, and required approvals.
+7. **Route the verified correction**
+   - If the root cause is verified and a code or configuration change is required, recommend handoff to `Technical Architect - Implementation Planning (Custom)` for the persistent execution plan.
 
 ## Required output
 - Issue summary and scope
@@ -35,8 +35,8 @@ Establish an evidence-backed root cause and the smallest safe correction without
 - Hypothesis table with diagnostic result
 - Root-cause status and explanation
 - Fix versus workaround
-- Changed files and data/configuration impact
-- Build/test evidence
+- Impacted areas and data/configuration impact, if any exist from the investigation
+- Diagnostic evidence and recommended validation scenarios
 - Residual uncertainty, monitoring, rollback, and handoff
 
 ## Common guardrails

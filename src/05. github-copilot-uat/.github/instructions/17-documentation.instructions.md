@@ -1,6 +1,6 @@
 ---
 description: Rules for Business Central requirements, solution designs, technical specifications, ADRs, test documents, runbooks, README files, release notes, and user guidance.
-applyTo: "**/*.md,**/docs/**/*.txt,**/documentation/**/*.txt"
+applyTo: "**/docs/**/*.md,**/docs/**/*.txt,**/documentation/**/*.txt,.github/copilot-instructions.md,.github/README*.md"
 ---
 
 # Documentation Rules

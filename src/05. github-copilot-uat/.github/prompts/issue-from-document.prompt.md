@@ -24,7 +24,7 @@ Establish an evidence-backed root cause or clearly bounded uncertainty, then pre
 ## Routing
 - Functional/configuration gap: hand off to `Functional Consultant - Solution Analysis (Custom)`.
 - Architecture gap: hand off to the relevant Architect.
-- Verified technical correction: hand off to `Technical Consultant - AL Development (Custom)`.
+- Verified technical correction: hand off to `Technical Architect - Implementation Planning (Custom)`, which routes through human plan review before `Technical Consultant - AL Development (Custom)`.
 
 ## Output
 - Incident brief and evidence inventory

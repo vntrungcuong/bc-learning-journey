@@ -8,7 +8,7 @@
 # Application identity
 projectDisplayName: "GHC Business Central UAT"
 projectNamespaceSegment: "GHCBusinessCentralUAT"
-publisherDisplayName: "GHC UAT"
+publisherDisplayName: "GHCUAT"
 publisherNamespaceRoot: "GHCUAT"
 objectAffix: "GHC"
 objectIdRanges:
@@ -18,8 +18,8 @@ objectIdRanges:
 # Business Central target
 businessCentralDeployment: "Online"
 target: "Cloud"
-runtime: "18.0"
-applicationVersion: "29.0.0.0"
+runtime: "17.1"
+applicationVersion: "28.0.0.0"
 platformVersion: "1.0.0.0"
 countryOrRegion: "US"
 
@@ -33,7 +33,7 @@ artifactsRoot: "artifacts"
 requiredAnalyzers:
   - CodeCop
   - UICop
-  - AppSourceCop
+  - PerTenantExtensionCop
 treatWarningsAsErrors: true
 testAppSeparated: true
 minimumRequiredReviewers: 1
@@ -42,6 +42,7 @@ minimumRequiredReviewers: 1
 allowedDevelopmentEnvironment: "Sandbox"
 productionPublishAllowedFromCopilot: false
 autoCommitAllowed: false
+autoPushAllowed: false
 autoMergeAllowed: false
 ```
 
@@ -108,6 +109,7 @@ Use these Custom Agents:
 Functional Consultant - Solution Analysis (Custom)
 Solution Architect - Solution Design (Custom)
 Technical Architect - Technical Design (Custom)
+Technical Architect - Implementation Planning (Custom)
 Technical Consultant - AL Development (Custom)
 Technical Consultant - Issue Diagnosis (Custom)
 Quality Assurance - AL Testing (Custom)
@@ -121,6 +123,8 @@ Requirement document or text
     -> Functional Consultant - Solution Analysis
     -> Solution Architect - Solution Design
     -> Technical Architect - Technical Design
+  -> Technical Architect - Implementation Planning
+  -> HUMAN PLAN REVIEW
     -> Technical Consultant - AL Development
     -> Quality Assurance - AL Testing
     -> Technical Architect - Solution Review
@@ -133,6 +137,8 @@ Requirement document or text
 Issue document or text
     -> Technical Consultant - Issue Diagnosis
     -> Functional or Architecture handoff when required
+  -> Technical Architect - Implementation Planning
+  -> HUMAN PLAN REVIEW
     -> Technical Consultant - AL Development
     -> Quality Assurance - AL Testing
     -> Technical Architect - Solution Review
